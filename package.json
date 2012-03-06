@@ -1,0 +1,18 @@
+{
+  "author": "William Amberg <wamberg@technushi.com> (http://technushi.com)",
+  "name": "marble_gpx",
+  "description": "Cleans GPX data of irregular points.",
+  "version": "0.0.0",
+  "homepage": "http://github.com/wamberg/marble_gpx",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wamberg/marble_gpx.git"
+  },
+  "main": "bin/marble_gpx.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
