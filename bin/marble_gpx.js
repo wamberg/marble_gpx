@@ -14,7 +14,11 @@ optimist = optimist.usage('Usage: $0');
 optimist = optimist
   .demand('f')
   .alias('f', 'file')
-  .describe('f', 'Load a file');
+  .describe('f', 'Input GPX path');
+optimist = optimist
+  .demand('o')
+  .alias('o', 'output')
+  .describe('o', 'Output GPX path');
 optimist = optimist
   .alias('s', 'strategy')
   .describe('s', 'Smoothing strategy')
@@ -35,7 +39,7 @@ switch (argv.strategy) {
 
 exists(argv.file, function(isExistant) {
   if (isExistant) {
-    new marbleGpx.marble(argv.file, strategy_function, argv).smoothGpx();
+    new marbleGpx.marble(argv.file, argv.output, strategy_function, argv).smoothGpx();
   } else {
     console.error(colors.red('ERROR:') + ' "%s" does not exist.', argv.file)
   }
