@@ -1,15 +1,5 @@
 {
-  "name": "marble_gpx",
-  "version": "0.0.0",
   "dependencies": {
-    "optimist": {
-      "version": "0.3.1",
-      "dependencies": {
-        "wordwrap": {
-          "version": "0.0.2"
-        }
-      }
-    },
     "jslint": {
       "version": "0.1.6",
       "dependencies": {
@@ -20,6 +10,20 @@
               "version": "1.0.3"
             }
           }
+        }
+      }
+    },
+    "async": {
+      "version": "0.1.18"
+    },
+    "node-xml": {
+      "version": "1.0.0"
+    },
+    "optimist": {
+      "version": "0.3.1",
+      "dependencies": {
+        "wordwrap": {
+          "version": "0.0.2"
         }
       }
     }
