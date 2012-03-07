@@ -1,0 +1,27 @@
+{
+  "name": "marble_gpx",
+  "version": "0.0.0",
+  "dependencies": {
+    "optimist": {
+      "version": "0.3.1",
+      "dependencies": {
+        "wordwrap": {
+          "version": "0.0.2"
+        }
+      }
+    },
+    "jslint": {
+      "version": "0.1.6",
+      "dependencies": {
+        "nopt": {
+          "version": "1.0.10",
+          "dependencies": {
+            "abbrev": {
+              "version": "1.0.3"
+            }
+          }
+        }
+      }
+    }
+  }
+}

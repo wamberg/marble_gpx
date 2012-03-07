@@ -9,10 +9,14 @@
     "url": "git://github.com/wamberg/marble_gpx.git"
   },
   "main": "bin/marble_gpx.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "optimist": "0.3.1"
+  },
+  "devDependencies": {
+    "jslint": "0.1.6"
+  },
   "optionalDependencies": {},
   "engines": {
-    "node": "*"
+    "node": ">= 0.6.12"
   }
 }
