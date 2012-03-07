@@ -1,7 +1,8 @@
 #!/usr/bin/env node
+var colors = require('../lib/colors');
 var marbleGpx = require('../lib/marble_gpx');
 var optimist = require('optimist')
-var path = require('path');
+var exists = require('path').exists;
 var strategy = require('../lib/strategy');
 var strategy_function = undefined;
 
@@ -18,24 +19,25 @@ optimist = optimist
   .alias('s', 'strategy')
   .describe('s', 'Smoothing strategy')
   .default('s', LOCAL_LINEAR_LEAST_SQUARES);
+optimist = optimist
+  .alias('l', 'locality')
+  .describe('l', '+/- points around current point')
+  .default('l', 3);
+var argv = optimist.argv;
 
-// parse arguments for different strategies
-optimist = optimist.check(function(argv) {
-  switch (argv.strategy) {
-    case LOCAL_LINEAR_LEAST_SQUARES:
-    default:
-      optimist = optimist
-        .alias('l', 'locality')
-        .describe('l', '+/- points around current point')
-        .default('l', 3);
-      strategy_function = strategy.local_linear_least_squares;
-      break;
+// select strategy
+switch (argv.strategy) {
+  case LOCAL_LINEAR_LEAST_SQUARES:
+  default:
+    strategy_function = strategy.local_linear_least_squares;
+    break;
+};
+
+exists(argv.file, function(isExistant) {
+  if (isExistant) {
+    new marbleGpx.marble(argv.file, strategy_function, argv).smoothGpx();
+  } else {
+    console.error(colors.red('ERROR:') + ' "%s" does not exist.', argv.file)
   }
 });
 
-var argv = optimist.argv;
-
-// TODO: !file_exists
-var file_exists = path.existsSync(argv.file)
-
-new marbleGpx.marble(argv.file, strategy_function, argv).smoothGpx();
