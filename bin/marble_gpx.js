@@ -1,8 +1,6 @@
 #!/usr/bin/env node
-var colors = require('../lib/colors');
 var marbleGpx = require('../lib/marble_gpx');
 var optimist = require('optimist')
-var exists = require('path').exists;
 var strategy = require('../lib/strategy');
 var strategy_function = undefined;
 
@@ -37,11 +35,4 @@ switch (argv.strategy) {
     break;
 };
 
-exists(argv.file, function(isExistant) {
-  if (isExistant) {
-    new marbleGpx.marble(argv.file, argv.output, strategy_function, argv).smoothGpx();
-  } else {
-    console.error(colors.red('ERROR:') + ' "%s" does not exist.', argv.file)
-  }
-});
-
+new marbleGpx.marble(argv.file, argv.output, strategy_function, argv).smoothGpx();
