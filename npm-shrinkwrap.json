@@ -1,5 +1,21 @@
 {
+  "name": "marble_gpx",
+  "version": "0.0.0",
   "dependencies": {
+    "optimist": {
+      "version": "0.3.1",
+      "dependencies": {
+        "wordwrap": {
+          "version": "0.0.2"
+        }
+      }
+    },
+    "async": {
+      "version": "0.1.18"
+    },
+    "libxmljs": {
+      "version": "0.5.4"
+    },
     "jslint": {
       "version": "0.1.6",
       "dependencies": {
@@ -13,25 +29,36 @@
         }
       }
     },
-    "async": {
-      "version": "0.1.18"
-    },
-    "libxmljs": {
-      "version": "0.5.4"
-    },
-    "xml2js": {
-      "version": "0.1.13",
+    "node-inspector": {
+      "version": "0.1.10",
       "dependencies": {
-        "sax": {
-          "version": "0.3.5"
-        }
-      }
-    },
-    "optimist": {
-      "version": "0.3.1",
-      "dependencies": {
-        "wordwrap": {
-          "version": "0.0.2"
+        "socket.io": {
+          "version": "0.8.7",
+          "dependencies": {
+            "socket.io-client": {
+              "version": "0.8.7",
+              "dependencies": {
+                "uglify-js": {
+                  "version": "1.0.6"
+                },
+                "websocket-client": {
+                  "version": "1.0.0"
+                },
+                "xmlhttprequest": {
+                  "version": "1.2.2"
+                }
+              }
+            },
+            "policyfile": {
+              "version": "0.0.4"
+            },
+            "redis": {
+              "version": "0.6.7"
+            }
+          }
+        },
+        "paperboy": {
+          "version": "0.0.3"
         }
       }
     }
